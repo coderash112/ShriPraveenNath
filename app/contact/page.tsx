@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
 
-  function submit(e: any) {
+  function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSent(true);
   }
