@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, type FormEvent } from "react";
 
 export default function AdminEventsPage() {
   const [date, setDate] = useState("");
   const [remarks, setRemarks] = useState("");
-  const [events, setEvents] = useState<any[]>([]);
 
-  async function addEvent(e: React.FormEvent<HTMLFormElement>) {
+  async function addEvent(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     await fetch("/api/events", {
@@ -21,9 +20,9 @@ export default function AdminEventsPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-10">
-      <h1 className="text-2xl font-semibold mb-6 text-orange-600">
-        Admin – Add Events
+    <div className="max-w-xl mx-auto px-6 py-10">
+      <h1 className="text-2xl font-semibold text-orange-600 mb-6">
+        Admin – Add Event
       </h1>
 
       <form onSubmit={addEvent} className="space-y-4">
@@ -42,7 +41,10 @@ export default function AdminEventsPage() {
           className="w-full border px-3 py-2 rounded"
         />
 
-        <button className="bg-orange-600 text-white px-4 py-2 rounded">
+        <button
+          type="submit"
+          className="bg-orange-600 text-white px-4 py-2 rounded"
+        >
           Add Event
         </button>
       </form>
