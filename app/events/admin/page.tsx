@@ -11,7 +11,7 @@ export default function AdminEventsPage() {
     setEvents(await res.json());
   }
 
-  async function addEvent(e) {
+  async function addEvent(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     await fetch("/api/events", {
       method: "POST",
