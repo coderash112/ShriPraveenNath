@@ -1,52 +1,53 @@
 "use client";
-import { useState } from "react";
+
+import { useState, type FormEvent } from "react";
 
 export default function LoginPage() {
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  async function submit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setError("");
 
-    const res = await fetch("/api/login", {
+    await fetch("/api/login", {
       method: "POST",
-      body: JSON.stringify({
-        username: e.target.username.value,
-        password: e.target.password.value,
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
     });
-
-    if (res.ok) {
-      window.location.href = "/events/admin";
-    } else {
-      setError("Invalid login");
-    }
   }
 
   return (
-    <div className="max-w-sm mx-auto mt-10">
-      <h2 className="text-xl font-semibold text-orange-600 mb-4">
-        Admin Login
-      </h2>
+    <div className="min-h-screen flex items-center justify-center bg-orange-50">
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-8 rounded-lg shadow-md w-80 space-y-4"
+      >
+        <h1 className="text-xl font-semibold text-center text-orange-600">
+          Admin Login
+        </h1>
 
-      {error && <p className="text-red-500 text-sm">{error}</p>}
-
-      <form onSubmit={submit} className="space-y-3">
         <input
-          name="username"
-          className="w-full border px-3 py-2 rounded"
+          type="text"
           placeholder="Username"
-          required
-        />
-        <input
-          name="password"
-          type="password"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           className="w-full border px-3 py-2 rounded"
-          placeholder="Password"
           required
         />
 
-        <button className="bg-orange-600 text-white px-4 py-2 rounded">
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full border px-3 py-2 rounded"
+          required
+        />
+
+        <button
+          type="submit"
+          className="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700"
+        >
           Login
         </button>
       </form>
