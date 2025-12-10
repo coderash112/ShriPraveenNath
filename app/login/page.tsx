@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function LoginPage() {
   const [error, setError] = useState("");
 
-  async function submit(e) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
 
