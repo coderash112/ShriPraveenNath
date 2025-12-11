@@ -1,25 +1,23 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Shri PraveenNath Maharaj",
-  description:
-    "Official website of Shri PraveenNath Maharaj – spiritual guide from Indore",
+  description: "Official website of Shri PraveenNath Maharaj",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col items-center bg-orange-50 text-center">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Spectral:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
 
-        <Navbar />
-        <main className="w-full px-4 pt-20 flex justify-center">
-          <div className="w-full max-w-3xl bg-white rounded-xl shadow-md p-6 text-center">
-            {children}
-          </div>
-        </main>
-        <Footer />
+      <body className="min-h-screen bg-gradient-to-b from-[#5a0a0a] via-[#7a1111] to-[#a4161a] text-center text-gold-100">
+        {children}
       </body>
     </html>
   );

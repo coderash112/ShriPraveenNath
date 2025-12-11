@@ -2,30 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* small safety to avoid horizontal scroll during testing */
 html, body {
   overflow-x: hidden;
 }
 
 body {
-  background: linear-gradient(to bottom, #fff7ed, #ffffff);
-  color: #1f2937;
+  background: yellow;
 }
-
-h1, h2, h3 {
-  font-family: var(--font-playfair);
-}
-
-p, span, a {
-  font-family: var(--font-inter);
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-scroll {
-  animation: scroll 30s linear infinite;
-}
-
-

@@ -2,17 +2,11 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur border-b z-50">
-      <div className="max-w-4xl mx-auto px-4 py-3 flex justify-center items-center gap-6 text-sm font-medium text-orange-700">
-        <Link href="/" className="hover:text-orange-900 transition">
-          Home
-        </Link>
-        <Link href="/events" className="hover:text-orange-900 transition">
-          Events
-        </Link>
-        <Link href="/contact" className="hover:text-orange-900 transition">
-          Contact
-        </Link>
+    <nav className="w-full bg-gradient-to-r from-[#4a0707] to-[#7a1111] shadow-xl border-b border-gold-400">
+      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-center gap-10 text-lg font-semibold text-gold-300 tracking-wide">
+        <a href="/" className="hover:text-gold-100 transition">Home</a>
+        <a href="/events" className="hover:text-gold-100 transition">Events</a>
+        <a href="/contact" className="hover:text-gold-100 transition">Contact</a>
       </div>
     </nav>
   );
