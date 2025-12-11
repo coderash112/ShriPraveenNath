@@ -1,4 +1,10 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow-x: hidden;
+}
 
 body {
   background: linear-gradient(to bottom, #fff7ed, #ffffff);
@@ -21,4 +27,5 @@ p, span, a {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
+
 
