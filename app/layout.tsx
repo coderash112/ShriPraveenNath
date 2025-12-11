@@ -1,4 +1,6 @@
 import "./globals.css";
+import Navbar from "./components/Navbar";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +18,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
 
-      <body className="min-h-screen bg-gradient-to-b from-[#5a0a0a] via-[#7a1111] to-[#a4161a] text-center text-gold-100">
+      <body className="min-h-screen bg-gradient-to-b from-[#5a0a0a] via-[#7a1111] to-[#a4161a]">
+        <Navbar />
         {children}
       </body>
     </html>

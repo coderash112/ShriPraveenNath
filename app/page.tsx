@@ -1,7 +1,6 @@
 export default function HomePage() {
   return (
     <div className="w-full">
-
       {/* HERO */}
       <section className="flex flex-col items-center text-center mt-10">
         <div className="w-44 h-44 sm:w-56 sm:h-56 rounded-full border-4 border-gold-400 shadow-[0_0_40px_rgba(255,204,0,0.4)] overflow-hidden">
