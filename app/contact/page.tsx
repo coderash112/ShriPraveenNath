@@ -30,6 +30,11 @@ export default function ContactPage() {
         />
         <input
           required
+          type="phone"
+          placeholder="Phone"
+          className="w-full border rounded px-3 py-2"
+        />
+        <input
           type="email"
           placeholder="Email"
           className="w-full border rounded px-3 py-2"
